@@ -1,0 +1,164 @@
+/* Layout Resets */
+
+
+/* Hide Excess Structures */
+.gh-search,
+.cover.gh-outer,
+.feed .feed-length,
+.post .single-footer,
+footer.gh-foot.gh-outer  {
+    display: none !important;
+}
+
+
+/* Correct Superscript and Subscript Formatting */
+sub, sup {
+	vertical-align: unset;
+	position: relative;
+}
+sup { bottom: 0.75rem; }
+sub { top: 0.75rem; }
+
+
+/* Don't Center Text on Small Screens */
+@media (max-width: 767px) {
+	.single-header { text-align: left; }
+	figcaption { text-align: right; }
+}
+
+
+/* Masthead */
+
+.gh-head-logo {
+	font-family: var(--font-serif);
+	font-weight: 600;
+	font-size: 2.35rem;
+}
+
+.gh-head-menu, .gh-head-actions {
+	font-family: var(--font-caption);
+	font-weight: 600;
+}
+
+@media (max-width: 991px) {
+	.gh-head-menu, .gh-head-actions {
+		font-weight: 500;
+	}
+}
+
+
+/* Index */
+
+.feed-calendar {
+	font-size: 1.2rem;
+}
+
+.feed-title {
+	font-family: var(--font-caption);
+}
+
+
+/* Article Header */
+
+h1.single-title {
+	font-family: var(--font-serif);
+	font-weight: 700;
+}
+
+.single-excerpt {
+	font-family: var(--font-caption);
+}
+
+.single-media {
+	margin-bottom: 1.5rem;
+}
+@media (max-width: 767px) {
+	.single-media {	margin-bottom: 1rem; }
+}
+
+/* Article Body - Base Formatting */
+
+.gh-content h2 {
+	font-family: var(--font-serif);
+	font-weight: 700;
+}
+
+.gh-content h3 {
+	font-family: var(--font-serif);
+	font-weight: 600;
+}
+
+figcaption {
+	font-family: var(--font-caption);
+}
+
+.gh-content > blockquote:not([class]), .gh-content > dl, .gh-content > ol, .gh-content > p, .gh-content > ul {
+	font-size: 1.8rem;
+}
+
+.gh-content em, .gh-content i {
+	font-weight: 450;
+}
+
+.gh-content b, .gh-content strong {
+	font-weight: 600;
+}
+
+.gh-content b em, .gh-content b i, .gh-content strong em, .gh-content strong i, .gh-content em b, .gh-content em strong, .gh-content i b, .gh-content i strong {
+	font-weight: 700;
+}
+
+.single-media figcaption a, .gh-content figcaption a {
+	color: var(--ghost-accent-color);
+	text-decoration: underline;
+}
+
+blockquote:not([class]) {
+	color: var(--dark-gray-color);
+	font-style: italic;
+	font-family: var(--font-serif-copy);
+	font-weight: 500;
+}
+
+blockquote:not([class]) u {
+	text-decoration: underline var(--mid-gray-color) 2px;
+}
+
+/* Article Body - Special Styles */
+
+.indent  { padding-left: 1em; }
+.indent2 { padding-left: 2em; }
+
+.gh-content .intro {
+	font-family: var(--font-caption);
+	font-size: 1.8rem;
+	color: var(--secondary-text-color);
+	text-align: center;
+	position: relative;
+	top: -2.5rem;
+	margin-bottom: -0.8rem;
+}
+@media (max-width: 767px) {
+	.gh-content .intro {
+		font-size: 1.7rem;
+		text-align: left;
+		top: -1.2rem;
+		margin-bottom: 0;
+	}
+}
+
+.tag-_format-poem .single-meta-length {
+	display: none;
+}
+
+.tag-_format-poem .gh-content p:not(.intro) {
+	font-family: var(--font-serif-copy);
+	font-size: 1.8rem;
+	line-height: 1.666666;
+	font-weight: 500;
+	color: var(--color-darker-gray);
+}
+
+.tag-_format-poem .gh-content p:not(.intro) b, .tag-_format-poem .gh-content p:not(.intro) strong {
+	font-weight: 700;
+}

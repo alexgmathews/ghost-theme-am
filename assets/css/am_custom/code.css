@@ -1,0 +1,30 @@
+/* Code formatting */
+
+code {
+	font-family: var(--font-mono) !important;
+	font-size: 1.6rem !important;
+    font-feature-settings: "ss01", "ss04", "zero";
+	letter-spacing: -0.033rem;
+}
+/* copied from prism.js css */
+:not(pre) > code {
+	background-color: #fdfdfd;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: .3em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #c92c2c;
+	display: inline;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	padding: .2em;
+	position: relative;
+}
+
+pre[class*="language-"] > code {
+	line-height: 1.75 !important;
+	background-size: 1em 5.6rem !important;
+}
