@@ -1,0 +1,98 @@
+name: Track TryGhost/Dawn
+
+on:
+  # workflow_dispatch:
+  schedule:
+    - cron: '0 15 * * *'  # 9am CST (no late-night e-mails)
+
+jobs:
+  track_upstream:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+
+      - name: Connect to [TryGhost/Dawn]
+        run: |
+
+          git remote add upstream https://github.com/TryGhost/Dawn.git
+          git fetch upstream main
+
+
+      - name: Set time range
+        run: |
+
+          SINCE=$(date -u -d "@$(($(date +%s) - 86400))" +"%Y-%m-%dT00:00:00Z")
+          UNTIL=$(date -u -d "@$(($(date +%s) - 86400))" +"%Y-%m-%dT23:59:59Z")
+          echo "SINCE=$SINCE" >> $GITHUB_ENV
+          echo "UNTIL=$UNTIL" >> $GITHUB_ENV
+
+
+      - name: Check for updates to [TryGhost/Dawn] by renovate[bot]
+        run: |
+
+          if git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --author="^renovate\[bot\]" --pretty=format:"%H" | grep -q .; then
+            echo "renovate[bot] updated [TryGhost/Dawn]:"
+            git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --author="^renovate\[bot\]" --oneline
+            echo "FLOWA=true" >> $GITHUB_ENV
+          else
+            echo "No updates from renovate[bot]. Skipping to next section..."
+          fi
+
+
+      - name: Merge changes from [TryGhost/Dawn] by renovate[bot]
+        if: ${{ env.FLOWA == 'true' }}
+        run: |
+
+          # set identity
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # disable merge conflict hints
+          git config advice.mergeConflict false
+
+          # cherry pick changes from the last day
+          COMMITS=$(git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --author="^renovate\[bot\]" --reverse --pretty=format:"%H")
+          for COMMIT in $COMMITS; do
+            git cherry-pick $COMMIT
+          done
+
+          # push changes
+          git push
+
+
+      - name: Check [TryGhost/Dawn] for updates
+        run: |
+
+          if git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --perl-regexp --author='^(?!renovate\[bot\]).*$' --pretty=format:"%H" | grep -q .; then
+            echo "[TryGhost/Dawn] was updated:"
+            git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --perl-regexp --author='^(?!renovate\[bot\]).*$' --oneline
+            echo "FLOWB=true" >> $GITHUB_ENV
+          else
+            echo "[TryGhost/Dawn] wasn’t updated. Stopping action..."
+          fi
+
+      
+      - name: Compose e-mail
+        if: ${{ env.FLOWB == 'true' }}
+        run: |
+
+            echo 'MAIL_BODY=<!doctype html><html><body>'"$( git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --perl-regexp --author='^(?!renovate\[bot\]).*$' --oneline | awk '{ gsub(/"/, "%21"); printf "%s<br>", $0 }' )"'</body></html>' >> $GITHUB_ENV
+
+
+      - name: Send e-mail  # https://github.com/marketplace/actions/send-email
+        if: ${{ env.FLOWB == 'true' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ vars.MAIL_SERVER }}
+          server_port: 465
+          username: ${{ vars.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          to: ${{ vars.MAIL_TO }}
+          from: ${{ vars.MAIL_FROM }}
+          subject: "New updates from TryGhost/Dawn"
+          html_body: ${{ env.MAIL_BODY }}
