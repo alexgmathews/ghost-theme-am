@@ -68,11 +68,6 @@
             },
             "white_logo_for_dark_mode": {
                 "type": "image"
-            },
-            "show_related_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
             }
         }
     },
