@@ -3,7 +3,6 @@
 
 /* Hide Excess Structures */
 .gh-search,
-.cover.gh-outer,
 .feed .feed-length  {
     display: none !important;
 }
