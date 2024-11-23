@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html{{#match @custom.color_scheme "Dark"}} class="theme-dark"{{/match}}{{#match @custom.color_scheme "Light"}} class="theme-light"{{/match}} lang="{{@site.locale}}">
+<html lang="{{@site.locale}}">
 
 <head>
     <meta charset="utf-8">
@@ -20,9 +20,6 @@
                     <a class="gh-head-logo" href="{{@site.url}}">
                         {{#if @site.logo}}
                             <img src="{{@site.logo}}" alt="{{@site.title}}">
-                            {{#if @custom.white_logo_for_dark_mode}}
-                                <img src="{{img_url @custom.white_logo_for_dark_mode}}" alt="{{@site.title}}">
-                            {{/if}}
                         {{else}}
                             {{@site.title}}
                         {{/if}}
