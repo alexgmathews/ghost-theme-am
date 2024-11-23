@@ -1,12 +1,6 @@
 /* Layout Resets */
 
 
-/* Hide Excess Structures */
-.gh-search  {
-    display: none !important;
-}
-
-
 /* Correct Superscript and Subscript Formatting */
 sub, sup {
 	vertical-align: unset;
