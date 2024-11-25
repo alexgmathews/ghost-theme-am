@@ -21,47 +21,6 @@
     opacity: 1;
 }
 
-.button .icon-loading {
-    display: none;
-}
-
-.button.loading {
-    text-indent: -9999px;
-}
-
-.button.loading .icon-loading {
-    display: block;
-}
-
 .button-secondary {
     color: var(--darker-gray-color);
-}
-
-.button-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    color: var(--darker-gray-color);
-    cursor: pointer;
-    background-color: transparent;
-    border: 0;
-    outline: none;
-}
-
-.button-icon:hover .icon {
-    opacity: 0.8;
-}
-
-.button-text {
-    padding: 0;
-    margin: 0;
-    line-height: inherit;
-    color: var(--darker-gray-color);
-    cursor: pointer;
-    background-color: transparent;
-    border: 0;
-    outline: none;
 }

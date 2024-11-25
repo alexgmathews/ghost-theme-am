@@ -23,14 +23,6 @@
     padding-bottom: 50%;
 }
 
-.u-placeholder.rectangle::before {
-    padding-bottom: 62.5%;
-}
-
-.u-placeholder.square::before {
-    padding-bottom: 100%;
-}
-
 .u-object-fit {
     position: absolute;
     top: 0;

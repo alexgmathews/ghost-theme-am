@@ -18,24 +18,6 @@
     margin: 16px auto 0;
 }
 
-.tag .tag-list {
-    margin-top: 2rem;
-    font-weight: 700;
-}
-
-.tag .tag-list-label {
-    margin-right: 0.5rem;
-    color: var(--secondary-text-color);
-}
-
-.tag .tag-list-item::before {
-    content: "#";
-}
-
-.tag .tag-list-item + .tag-list-item {
-    margin-left: 0.3rem;
-}
-
 .tag .tag-media {
     margin-top: 4.5rem;
 }

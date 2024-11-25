@@ -3,10 +3,6 @@
     text-align: center;
 }
 
-.page-template .single-header {
-    margin-top: var(--header-spacing);
-}
-
 .single-meta {
     margin-bottom: 1rem;
     font-size: 1.2rem;

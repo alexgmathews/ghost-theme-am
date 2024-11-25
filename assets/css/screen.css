@@ -2,8 +2,6 @@
 @import "general/fonts.css";
 @import "general/basics.css";
 @import "general/button.css";
-@import "general/form.css";
-@import "general/icons.css";
 @import "site/layout.css";
 @import "site/header.css";
 @import "blog/feed.css";
@@ -11,7 +9,6 @@
 @import "blog/single.css";
 @import "blog/tag.css";
 @import "misc/utils.css";
-@import "misc/animations.css";
 @import "am_custom/structure.css";
 @import "am_custom/color.css";
 @import "am_custom/code.css";
