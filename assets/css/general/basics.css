@@ -16,9 +16,11 @@
     --twitter-color: #1da1f2;
     --rss-color: #f26522;
     --animation-base: ease-in-out;
-    --font-sans: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-    --font-serif: Lora, Times, serif;
-    --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    --font-caption: 'Cabin 94x','Trebuchet MS',Trebuchet,sans-serif;
+	--font-mono: 'Source Code Pro',Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+	--font-sans: 'Source Sans','Trebuchet MS',Trebuchet,sans-serif;
+	--font-serif: 'Crimson Pro',Charter,'Bitstream Charter',Georgia,Baskerville,serif;
+	--font-serif-copy: Lora,Charter,'Bitstream Charter',Georgia,Baskerville,serif;
     --navbar-height: 80px;
     --content-font-size: 1.7rem;
     --header-spacing: 60px;
