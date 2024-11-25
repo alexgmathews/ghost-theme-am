@@ -7,12 +7,10 @@
 @import "site/layout.css";
 @import "site/header.css";
 @import "blog/feed.css";
-@import "blog/featured.css";
 @import "blog/pagination.css";
 @import "blog/single.css";
 @import "blog/related.css";
 @import "blog/tag.css";
-@import "misc/owl.css";
 @import "misc/utils.css";
 @import "misc/animations.css";
 @import "misc/dark.css";
