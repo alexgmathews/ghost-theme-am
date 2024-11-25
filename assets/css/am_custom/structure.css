@@ -2,8 +2,7 @@
 
 
 /* Hide Excess Structures */
-.gh-search,
-.feed .feed-length  {
+.gh-search  {
     display: none !important;
 }
 

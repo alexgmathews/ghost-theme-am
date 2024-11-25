@@ -11,14 +11,6 @@
     opacity: 0.8;
 }
 
-.feed:hover .feed-right {
-    margin-right: 1.6rem;
-}
-
-.feed:hover .feed-icon {
-    transform: translateX(0.4rem);
-}
-
 .feed + .feed {
     border-top: 1px solid var(--light-gray-color);
 }
@@ -55,37 +47,4 @@
     text-overflow: ellipsis;
     letter-spacing: 0;
     white-space: nowrap;
-}
-
-.feed-right {
-    display: flex;
-    align-items: center;
-    transition: margin 0.2s var(--animation-base);
-}
-
-.icon-star {
-    width: 16px;
-    height: 16px;
-    margin-right: 1rem;
-    color: var(--orange-color);
-}
-
-.public .icon-star {
-    display: none;
-}
-
-.feed-length {
-    font-size: 1.4rem;
-    color: var(--secondary-text-color);
-    white-space: nowrap;
-}
-
-.feed-icon {
-    position: absolute;
-    right: 0;
-    width: 16px;
-    height: 16px;
-    color: var(--secondary-text-color);
-    transition: transform 0.2s var(--animation-base);
-    transform: translateX(2rem);
 }
