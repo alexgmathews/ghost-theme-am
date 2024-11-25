@@ -9,10 +9,6 @@
     color: var(--brand-color);
 }
 
-.tag .tag-name::before {
-    content: "#";
-}
-
 .tag .tag-description {
     max-width: 520px;
     margin: 16px auto 0;
