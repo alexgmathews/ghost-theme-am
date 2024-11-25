@@ -1,0 +1,38 @@
+name: Deploy theme
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+    paths:
+      - '**'
+      - '!.**'
+      - '!gulpfile.js'
+      - '!LICENSE.md'
+      - '!README.md'
+
+jobs:
+  deploy_theme:
+    runs-on: ubuntu-latest
+  
+
+    steps:
+      - name: Checkout the main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      
+
+      - name: Build and package theme
+        run: |
+
+          yarn
+          yarn zip
+
+
+      - name: Deploy theme
+        uses: TryGhost/action-deploy-theme@v1
+        with:
+          api-url: ${{ vars.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          file: "dist/ghost-theme-am.zip"
