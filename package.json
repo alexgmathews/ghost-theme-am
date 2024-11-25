@@ -1,6 +1,6 @@
 {
-    "name": "dawn",
-    "description": "A Ghost theme",
+    "name": "ghost-theme-am",
+    "description": "Ghost theme for alexmathews.blog, modified from TryGhost/Dawn",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -8,17 +8,11 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Alex Mathews",
+        "email": "96121253+alexgmathews@users.noreply.github.com",
+        "url": "https://alexmathews.blog"
     },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "docs": "https://dawn.ghost.io/about/",
-    "config": {
+	"config": {
         "posts_per_page": 5,
         "image_sizes": {
             "xs": {
