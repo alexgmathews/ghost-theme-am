@@ -15,9 +15,6 @@
 	"config": {
         "posts_per_page": 50,
         "image_sizes": {
-            "xs": {
-                "width": 150
-            },
             "s": {
                 "width": 400
             },
@@ -29,9 +26,6 @@
             },
             "xl": {
                 "width": 1140
-            },
-            "xxl": {
-                "width": 1920
             }
         },
         "card_assets": true,
