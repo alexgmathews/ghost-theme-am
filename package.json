@@ -79,11 +79,6 @@
                 "default": "Featured articles",
                 "group": "homepage"
             },
-            "show_author": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
             "show_related_posts": {
                 "type": "boolean",
                 "default": true,

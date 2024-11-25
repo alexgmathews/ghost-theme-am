@@ -58,49 +58,4 @@
         {{content}}
     </div>
 
-    {{#is "post"}}
-    <div class="gh-canvas">
-    <footer class="single-footer">
-
-        <div class="single-footer-left">
-        {{#prev_post}}
-            <div class="navigation navigation-previous">
-                <a class="navigation-link" href="{{url}}" aria-label="Previous post">
-                    {{> "icons/arrow-left"}}
-                </a>
-            </div>
-        {{/prev_post}}
-        </div>
-
-        <div class="single-footer-middle">
-        {{#if @custom.show_author}}
-            <div class="single-footer-top">
-                <h3 class="single-footer-title">Published by:</h3>
-                <div class="author-list">
-                    {{#foreach authors}}
-                    <div class="author-image-placeholder u-placeholder square">
-                        <a href="{{url}}" title="{{name}}">
-                            <img class="author-image u-object-fit" src="{{img_url profile_image size="xs"}}" alt="{{name}}" loading="lazy">
-                        </a>
-                    </div>
-                    {{/foreach}}
-                </div>
-            </div>
-        {{/if}}
-        </div>
-
-        <div class="single-footer-right">
-        {{#next_post}}
-            <div class="navigation navigation-next">
-                <a class="navigation-link" href="{{url}}" aria-label="Next post">
-                    {{> "icons/arrow-right"}}
-                </a>
-            </div>
-        {{/next_post}}
-        </div>
-
-    </footer>
-    </div>
-    {{/is}}
-
 </article>
