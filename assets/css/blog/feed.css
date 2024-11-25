@@ -16,23 +16,16 @@
 }
 
 .feed-calendar {
-    display: flex;
-    min-width: 45px;
-    margin-right: 1.5rem;
+    margin-left: 1.5rem;
     font-size: 1.1rem;
     font-weight: 800;
     color: var(--brand-color);
     white-space: nowrap;
-}
-
-.feed-calendar-month {
-    margin-right: 0.4rem;
     text-transform: uppercase;
 }
 
 .feed-title {
     flex-grow: 1;
-    padding-right: 1rem;
     margin-bottom: 0;
     overflow: hidden;
     font-family: var(--gh-font-body, var(--font-sans));
