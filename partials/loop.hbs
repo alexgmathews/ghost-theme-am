@@ -3,7 +3,11 @@
     <h2 class="feed-title">{{title}}</h2>
 
     <time class="feed-calendar" datetime="{{date published_at format="YYYY-MM-DD"}}">
-        {{date published_at format="MMM D, YYYY"}}
+        {{#match (date published_at format="D-mm") "!=" "1-00"}}
+            {{date published_at format="MMM D, YYYY"}}
+        {{else}}
+            {{date published_at format="MMM YYYY"}}
+        {{/match}}
     </time>
 
     <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>

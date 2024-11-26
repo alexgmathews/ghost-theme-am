@@ -6,7 +6,11 @@
             <div class="single-meta">
                 <span class="single-meta-item single-meta-date">
                     <time datetime="{{date format="YYYY-MM-DD"}}">
-                        {{date published_at}}
+                        {{#match (date published_at format="D-mm") "!=" "1-00"}}
+                            {{date published_at format="MMM D, YYYY"}}
+                        {{else}}
+                            {{date published_at format="MMM YYYY"}}
+                        {{/match}}
                     </time>
                 </span>
                 {{#match (reading_time minute="%" minutes="%") ">" 2}}
