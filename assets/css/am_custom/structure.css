@@ -36,6 +36,12 @@ sub { top: 0.75rem; }
 	}
 }
 
+@media (min-width: 768px) {
+	.nav-home {
+		display: none;
+	}
+}
+
 
 /* Index */
 
