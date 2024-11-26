@@ -9,11 +9,11 @@
                         {{date published_at}}
                     </time>
                 </span>
-                {{#if reading_time}}
+                {{#match (reading_time minute="%" minutes="%") ">" 2}}
                     <span class="single-meta-item single-meta-length">
                         {{reading_time}}
                     </span>
-                {{/if}}
+                {{/match}}
                 {{#primary_tag}}
                     <span class="single-meta-item single-meta-tag">
                         <a class="post-tag post-tag-{{slug}}" href="{{url}}">
