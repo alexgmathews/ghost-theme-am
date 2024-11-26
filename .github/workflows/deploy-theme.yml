@@ -24,6 +24,15 @@ jobs:
           ref: main
       
 
+      - name: Minify handlebars templates
+        run: |
+
+          # https://github.com/kangax/html-minifier
+          npm install html-minifier -g
+          html-minifier --collapse-whitespace --ignore-custom-comments '[]' --ignore-custom-fragments '[ /{{!<\[^}\]*}}/ ]' --input-dir . --output-dir . --file-ext hbs
+          find . -type f -name "*.hbs" -exec sed -i -e 's/} {/}{/g' -e 's/> </></g' -e 's/> {/>{/g' -e 's/} </}</g' {} \;
+
+
       - name: Build and package theme
         run: |
 
