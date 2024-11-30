@@ -1,8 +1,8 @@
 © 2022–2024 Alexander Mathews
 
-This Font Software is licensed under the SIL Open Font License, Version 1.1.  
+The font software included in this theme is licensed under the SIL Open Font License, Version 1.1.  
 
-This license is copied below and is available with a FAQ at [openfontlicense.org](https://openfontlicense.org)
+The license is copied below and is available with a FAQ at [openfontlicense.org](https://openfontlicense.org)
 
 ---
 # SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
