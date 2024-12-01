@@ -27,10 +27,15 @@ jobs:
       - name: Minify handlebars templates
         run: |
 
+          # don't minify alternate image sizes template. CDN URL replacement is faster using new-line matching
+          mv partials/srcset.hbs partials/srcset.no-min
+
           # https://github.com/kangax/html-minifier
           npm install html-minifier -g
           html-minifier --collapse-whitespace --ignore-custom-comments '[]' --ignore-custom-fragments '[ /{{!<\[^}\]*}}/ ]' --input-dir . --output-dir . --file-ext hbs
           find . -type f -name "*.hbs" -exec sed -i -e 's/} {/}{/g' -e 's/> </></g' -e 's/> {/>{/g' -e 's/} </}</g' {} \;
+
+          mv partials/srcset.no-min partials/srcset.hbs
 
 
       - name: Build and package theme
