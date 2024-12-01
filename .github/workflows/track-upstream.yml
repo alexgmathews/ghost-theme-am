@@ -1,4 +1,4 @@
-name: Track TryGhost/Dawn
+name: Track changes from TryGhost/Dawn
 
 on:
   # workflow_dispatch:
@@ -81,7 +81,7 @@ jobs:
         if: ${{ env.FLOWB == 'true' }}
         run: |
 
-            echo 'MAIL_BODY=<!doctype html><html><body>'"$( git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --perl-regexp --author='^(?!renovate\[bot\]).*$' --oneline | awk '{ gsub(/"/, "%21"); printf "%s<br>", $0 }' )"'</body></html>' >> $GITHUB_ENV
+            echo 'MAIL_BODY=<!doctype html><html><body>'"$( git --no-pager log upstream/main --since=$SINCE --until=$UNTIL --perl-regexp --author='^(?!renovate\[bot\]).*$' --oneline | awk '{ printf "%s<br>", $0 }' )"'</body></html>' >> $GITHUB_ENV
 
 
       - name: Send e-mail  # https://github.com/marketplace/actions/send-email
