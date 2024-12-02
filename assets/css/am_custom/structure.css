@@ -36,6 +36,10 @@ sub { top: 0.75rem; }
 	}
 }
 
+.nav {
+	color: var(--darker-gray-color);
+}
+
 @media (min-width: 768px) {
 	.nav-home {
 		display: none;
