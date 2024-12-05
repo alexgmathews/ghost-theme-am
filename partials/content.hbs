@@ -2,6 +2,7 @@
 
     {{#match @page.show_title_and_feature_image}}
         <header class="single-header gh-canvas">
+
             {{#is "post"}}
             <div class="single-meta">
                 <span class="single-meta-item single-meta-date">
@@ -14,9 +15,11 @@
                     </time>
                 </span>
                 {{#match (reading_time minute="%" minutes="%") ">" 2}}
-                    <span class="single-meta-item single-meta-length">
-                        {{reading_time}}
-                    </span>
+                    {{^has tag="#format-poem"}}
+                        <span class="single-meta-item single-meta-length">
+                            {{reading_time}}
+                        </span>
+                    {{/has}}
                 {{/match}}
                 {{#primary_tag}}
                     <span class="single-meta-item single-meta-tag">

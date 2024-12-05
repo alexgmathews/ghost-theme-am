@@ -147,10 +147,6 @@ blockquote:not([class]) u {
 	}
 }
 
-.tag-_format-poem .single-meta-length {
-	display: none;
-}
-
 .tag-_format-poem .gh-content p:not(.intro) {
 	font-family: var(--font-serif-copy);
 	font-size: 1.8rem;
