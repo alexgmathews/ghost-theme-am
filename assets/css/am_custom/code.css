@@ -6,6 +6,7 @@ code {
     font-feature-settings: "ss01", "ss04", "zero";
 	letter-spacing: -0.033rem;
 }
+
 /* copied from prism.js css */
 :not(pre) > code {
 	background-color: #fdfdfd;
@@ -22,6 +23,7 @@ code {
 	hyphens: none;
 	padding: .2em;
 	position: relative;
+	font-stretch: 72%;
 }
 
 pre[class*="language-"] > code {
