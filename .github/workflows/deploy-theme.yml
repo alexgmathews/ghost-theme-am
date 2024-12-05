@@ -30,6 +30,9 @@ jobs:
           # Don't minify alternate image sizes template (1/2) - CDN URL replacement is faster using new-line matching
           mv partials/srcset.hbs partials/srcset.no-min
 
+          # Remove handlebars comments
+          find . -type f -name "*.hbs" -exec perl -i -pe 's/\{\{!--.*?--\}\}//g' {} \;
+
           # 1. Delete all empty lines - ^\s*$
           # 2. Strip preceeding whitespace - ^\s+
           # 3. Strip trailing whitespace - \s+$
