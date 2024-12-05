@@ -39,6 +39,9 @@ jobs:
           # Remove all line breaks
           find . -type f -name "*.hbs" -exec sed -i ':a;N;$!ba;s/\n//g' {} \;
 
+          # Bugfix
+          sed -i 's/{{ghost_head[^}]*}}/\n&\n/' default.hbs
+
           # Don't minify alternate image size template (2/2)
           mv partials/srcset.no-min partials/srcset.hbs
 
