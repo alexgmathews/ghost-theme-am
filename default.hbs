@@ -25,7 +25,7 @@
         {{/has}}
     {{/post}}
 
-    {{ghost_head}}
+    {{ghost_head exclude="social_data"}}
 </head>
 
 <body class='{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}'>
