@@ -60,6 +60,11 @@ sub { top: 0.75rem; }
 
 /* Article Header */
 
+.single-meta-item + .single-meta-item::before {
+	content: "\0020\2022\0020";
+	padding: 0;
+}
+
 h1.single-title {
 	font-family: var(--font-serif);
 	font-weight: 700;
