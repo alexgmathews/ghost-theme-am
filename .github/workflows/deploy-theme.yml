@@ -27,14 +27,19 @@ jobs:
       - name: Minify handlebars templates
         run: |
 
-          # don't minify alternate image sizes template. CDN URL replacement is faster using new-line matching
+          # Don't minify alternate image sizes template (1/2) - CDN URL replacement is faster using new-line matching
           mv partials/srcset.hbs partials/srcset.no-min
 
-          # https://github.com/kangax/html-minifier
-          npm install html-minifier -g
-          html-minifier --collapse-whitespace --ignore-custom-comments '[]' --ignore-custom-fragments '[ /{{!<\[^}\]*}}/ ]' --input-dir . --output-dir . --file-ext hbs
-          find . -type f -name "*.hbs" -exec sed -i -e 's/} {/}{/g' -e 's/> </></g' -e 's/> {/>{/g' -e 's/} </}</g' {} \;
+          # 1. Delete all empty lines - ^\s*$
+          # 2. Strip preceeding whitespace - ^\s+
+          # 3. Strip trailing whitespace - \s+$
+          # 4. Add a trailing space to all lines that do not end with > or }}
+          find . -type f -name "*.hbs" -exec sed -i -e '/^\s*$/d' -e 's/^\s\+//' -e 's/\s\+$//' -e '/>$/!{ /}}$/!s/$/ / }' {} \;
 
+          # Remove all line breaks
+          find . -type f -name "*.hbs" -exec sed -i ':a;N;$!ba;s/\n//g' {} \;
+
+          # Don't minify alternate image size template (2/2)
           mv partials/srcset.no-min partials/srcset.hbs
 
 
