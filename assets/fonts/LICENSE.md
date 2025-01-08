@@ -1,4 +1,4 @@
-© 2022–2024 Alexander Mathews
+© 2022–2025 Alexander Mathews
 
 The font software included in this theme is licensed under the SIL Open Font License, Version 1.1.  
 
