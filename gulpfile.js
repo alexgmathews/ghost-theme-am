@@ -78,22 +78,30 @@ function js(done) {
 function zipper(done) {
     const filename = require('./package.json').name + '.zip';
 
-    pump([
-        src([
-            '**',
-            '!node_modules', '!node_modules/**',
-            '!dist', '!dist/**',
-            '!yarn-error.log',
-            '!.**',
-            '!assets/css', '!assets/css/**',
-            '!assets/js', '!assets/js/**',
-            '!gulpfile.js',
-            '!package-lock.json',
-            '!yarn.lock'
-        ]),
-        zip(filename),
-        dest('dist/')
-    ], handleError(done));
+    pump(
+        [
+            src(
+                [
+                    '**',
+                    '!node_modules', '!node_modules/**',
+                    '!dist', '!dist/**',
+                    '!yarn-error.log',
+                    '!.**',
+                    '!assets/css', '!assets/css/**',
+                    '!assets/js', '!assets/js/**',
+                    '!gulpfile.js',
+                    '!package-lock.json',
+                    '!yarn.lock'
+                ],
+                {
+                    encoding: false
+                }
+            ),
+            zip(filename),
+            dest('dist/')
+        ],
+        handleError(done)
+    );
 }
 
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
