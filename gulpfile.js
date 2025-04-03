@@ -83,15 +83,15 @@ function zipper(done) {
             src(
                 [
                     '**',
-                    '!node_modules', '!node_modules/**',
-                    '!dist', '!dist/**',
-                    '!yarn-error.log',
                     '!.**',
+                    '!dist', '!dist/**',
+                    '!node_modules', '!node_modules/**',
+                    '!package-lock.json',
+                    '!yarn.lock',
+                    '!yarn-error.log',
                     '!assets/css', '!assets/css/**',
                     '!assets/js', '!assets/js/**',
-                    '!gulpfile.js',
-                    '!package-lock.json',
-                    '!yarn.lock'
+                    '!gulpfile.js'
                 ],
                 {
                     encoding: false
