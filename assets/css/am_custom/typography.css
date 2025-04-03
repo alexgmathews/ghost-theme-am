@@ -129,6 +129,17 @@ blockquote:not([class]) u {
 	text-decoration: underline var(--mid-gray-color) 2px;
 }
 
+blockquote.kg-blockquote-alt {
+	color: var(--ghost-accent-color);
+	font-family: var(--font-serif-copy);
+	font-size: 1.75em;
+	font-style: italic;
+	font-weight: 500;
+	margin: 0.25em 0;
+	padding: 0 0.666em;
+	text-align: center;
+}
+
 /* Article Body - Special Styles */
 
 .indent  { padding-left: 1em; }
