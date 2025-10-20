@@ -1,35 +1,19 @@
-/* Color By Tag */
+/* ! Match colors in default.hbs and configured brand color * /
 
+/* Essays: Green */
 .nav-essays a, /* top navigation bar button; uses label text */
-.post-feed .tag-essays .feed-calendar, /* index: calendar date; uses slug text */
-.tag-essays .tag-name, /* tag-index title; uses slug text */
-article.post .post-tag-essays, /* post meta description tag, uses slug text */
-.tag-essays .button, /* Load More Button */
-.tag-essays .single-media a, /* Automated Image Attribution */
-.tag-essays .gh-content a { /* Article Link */
+.post-feed .tag-essays .feed-calendar { /* index: calendar date; uses slug text */
 	color: #008F8F;
 }
-.tag-essays blockquote:not([class]) { /* blockwquote style #1 left bar highlight */
-	border-left-color: #008F8F;
-}
 
+/* Stories, Poems, and Songs: Blue */
 .nav-stories-poems-and-songs a,
-.post-feed .tag-stories-poems-songs .feed-calendar,
-.tag-stories-poems-songs .tag-name,
-article.post .post-tag-stories-poems-songs,
-.tag-stories-poems-songs .button,
-.tag-stories-poems-songs .single-media a,
-.tag-stories-poems-songs .gh-content a {
+.post-feed .tag-stories-poems-songs .feed-calendar {
 	color: #006691;
 }
-.tag-stories-poems-songs blockquote:not([class]) {
-	border-left-color: #006691;
-}
 
-/* MATCH BRAND COLOR */
+/* Technology Guides: Orange (match brand color) */
 .nav-technology-guides a,
-.post-feed .tag-tech .feed-calendar,
-.tag-tech .tag-name,
-article.post .post-tag-tech {
+.post-feed .tag-tech .feed-calendar {
 	color: #DB7909;
 }

@@ -26,6 +26,17 @@
     {{/post}}
 
     {{ghost_head exclude="social_data"}}
+
+    {{#tag}}
+        {{#match slug "essays"}}<style>:root{--ghost-accent-color:#008F8F;}</style>{{/match}}
+        {{#match slug "stories-poems-songs"}}<style>:root{--ghost-accent-color:#006691;}</style>{{/match}}
+    {{/tag}}
+
+    {{#post}}
+        {{#match primary_tag.slug "essays"}}<style>:root{--ghost-accent-color:#008F8F;}</style>{{/match}}
+        {{#match primary_tag.slug "stories-poems-songs"}}<style>:root{--ghost-accent-color:#006691;}</style>{{/match}}
+    {{/post}}
+    
 </head>
 
 <body class='{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}'>
