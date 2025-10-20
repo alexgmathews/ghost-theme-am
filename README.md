@@ -31,6 +31,8 @@ This theme includes the following third-party software:
 © 2013–2025 Ghost Foundation  
 [MIT License](https://github.com/TryGhost/Dawn/blob/main/LICENSE)
 
+Leaf icon by Meko from [Noun Project](https://thenounproject.com/browse/icons/term/leaf/) (CC BY 3.0)
+
 **[Lora](https://github.com/cyrealtype/Lora-Cyrillic)**  
 © 2011 The Lora Project Authors, with Reserved Font Name "Lora"  
 [SIL Open Font License, Version 1.1](https://github.com/cyrealtype/Lora-Cyrillic/blob/main/OFL.txt)
