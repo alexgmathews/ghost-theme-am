@@ -28,14 +28,7 @@
                 "width": 1140
             }
         },
-        "card_assets": false,
-        "custom": {
-            "navigation_layout": {
-                "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
-                "default": "Logo on the left"
-            }
-        }
+        "card_assets": false
     },
     "scripts": {
         "dev": "gulp",
