@@ -2,99 +2,110 @@
 /* https://fonts.google.com/variablefonts#font-families */
 
 @font-face {
-    font-family: 'Cabin 95x';
-    font-style: normal;
-    font-weight: 400 700;
-    font-stretch: 95%;
-    font-synthesis: none;
-    src: url('/assets/fonts/cabin95x_r_400-700.v1.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: 'Crimson Pro';
-    font-style: normal;
-    font-weight: 500 700;
-    font-synthesis: none;
-    src: url('/assets/fonts/crimsonpro_r_500-700.v1.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: Lora;
-    font-style: normal;
-    font-weight: 500;
-    font-synthesis: none;
-    src: url('/assets/fonts/lora_r_500.v3.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: Lora;
-    font-style: normal;
-    font-weight: 700;
-    font-synthesis: none;
-    src: url('/assets/fonts/lora_r_700.v3.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: Lora;
-    font-style: italic;
-    font-weight: 500;
-    font-synthesis: none;
-    src: url('/assets/fonts/lora_i_500.v3.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-synthesis: none;
-    src: url('/assets/fonts/sourcecodepro_r_400.v3.woff2') format('woff2');
-    unicode-range: U+20-7E;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: 'Source Code Pro';
-    font-style: italic;
-    font-weight: 400;
-    font-synthesis: none;
-    src: url('/assets/fonts/sourcecodepro_i_400.v3.woff2') format('woff2');
-    unicode-range: U+20-7E;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: 'Source Sans';
-    font-style: normal;
-    font-weight: 400 600;
-    font-synthesis: none;
-    src: url('/assets/fonts/sourcesans_r_400-600.v1.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+00A7,U+00A9,U+00AE,U+2020-2022;
-    font-display: block;
-  }
-  
-  @font-face {
-    font-family: 'Source Sans';
-    font-style: italic;
-    font-weight: 400 700;
-    font-synthesis: none;
-    src: url('/assets/fonts/sourcesans_i_400-700.v1.woff2') format('woff2');
-    unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026,U+00A7,U+00A9,U+00AE,U+2020-2022;
-    font-display: block;
-  }
+  font-family: 'Cabin 95x';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 95%;
+  font-synthesis: none;
+  src: url('/assets/fonts/cabin95x_r_400-700.v1.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+  font-display: block;
+}
 
-  
-  /* DEVELOPMENT FONT RANGES */ /*
-  
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: normal;
+  font-weight: 500 700;
+  font-synthesis: none;
+  src: url('/assets/fonts/crimsonpro_r_500-700.v1.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: italic;
+  font-weight: 500 700;
+  font-synthesis: none;
+  src: url('/assets/fonts/crimsonpro_i_500-700.v1.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+  font-display: block;
+}
+
+@font-face {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
+  font-synthesis: none;
+  src: url('/assets/fonts/lora_r_500.v3.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+  font-display: block;
+}
+
+@font-face {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-synthesis: none;
+  src: url('/assets/fonts/lora_r_700.v3.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+  font-display: block;
+}
+
+@font-face {
+  font-family: Lora;
+  font-style: italic;
+  font-weight: 500;
+  font-synthesis: none;
+  src: url('/assets/fonts/lora_i_500.v3.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  src: url('/assets/fonts/sourcecodepro_r_400.v3.woff2') format('woff2');
+  unicode-range: U+20-7E;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: italic;
+  font-weight: 400;
+  font-synthesis: none;
+  src: url('/assets/fonts/sourcecodepro_i_400.v3.woff2') format('woff2');
+  unicode-range: U+20-7E;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-style: normal;
+  font-weight: 400 600;
+  font-synthesis: none;
+  src: url('/assets/fonts/sourcesans_r_400-600.v1.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+00A7, U+00A9, U+00AE, U+2020-2022;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  font-style: italic;
+  font-weight: 400 700;
+  font-synthesis: none;
+  src: url('/assets/fonts/sourcesans_i_400-700.v1.woff2') format('woff2');
+  unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+00A7, U+00A9, U+00AE, U+2020-2022;
+  font-display: block;
+}
+
+
+/* DEVELOPMENT FONT RANGES */
+/*
+
   @font-face {
     font-family: 'Cabin';
     font-style: normal;
@@ -105,7 +116,7 @@
     unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026;
     font-display: block;
   }
-  
+
   @font-face {
     font-family: 'Crimson Pro';
     font-style: normal;
@@ -115,7 +126,7 @@
     unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026;
     font-display: block;
   }
-  
+
   @font-face {
     font-family: Lora;
     font-style: normal;
@@ -125,7 +136,7 @@
     unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026;
     font-display: block;
   }
-  
+
   @font-face {
     font-family: Lora;
     font-style: italic;
@@ -135,25 +146,25 @@
     unicode-range: U+20-7E,U+2013-2014,U+2018-2019,U+201C-201D,U+2026;
     font-display: block;
   }
-  
+
   */
-  
-  /* Font Stacks
-  
+
+/* Font Stacks
+
   https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list
   https://developer.apple.com/fonts/system-fonts/
   https://wiki.mobileread.com/wiki/List_of_fonts_included_with_each_device
-  
+
   Serif - sorted in likeness of character
    1. Crimson Pro (webfont)
    2. Charter (iOS 13 + macOS Catalina )
    3. Bitstream Charter (name variant, unknown device inclusion)
    4. Georgia (broad Windows + Mac support)
    5. Baskerville (iBooks, Kindle Paperwhite)
-  
+
   Sans-Serifs - sorted in order of likeness
    1. Cabin / Source Sans 3 (webfont)
    2. Trebuchet MS (broad Windows + Mac support)
    3. Trebuchet (Kindle Fire)
-  
+
   Mono - copying prism.js font stack */

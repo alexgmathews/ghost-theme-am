@@ -1,18 +1,30 @@
 /* Layout Resets */
 
 /* Correct Superscript and Subscript Formatting */
-sub, sup {
+sub,
+sup {
 	vertical-align: unset;
 	position: relative;
 }
-sup { bottom: 0.75rem; }
-sub { top: 0.75rem; }
+
+sup {
+	bottom: 0.75rem;
+}
+
+sub {
+	top: 0.75rem;
+}
 
 
 /* Don't Center Text on Small Screens */
 @media (max-width: 767px) {
-	.single-header { text-align: left; }
-	figcaption { text-align: right; }
+	.single-header {
+		text-align: left;
+	}
+
+	figcaption {
+		text-align: right;
+	}
 }
 
 
@@ -24,13 +36,16 @@ sub { top: 0.75rem; }
 	font-size: 2.35rem;
 }
 
-.gh-head-menu, .gh-head-actions {
+.gh-head-menu,
+.gh-head-actions {
 	font-family: var(--font-caption);
 	font-weight: 600;
 }
 
 @media (max-width: 991px) {
-	.gh-head-menu, .gh-head-actions {
+
+	.gh-head-menu,
+	.gh-head-actions {
 		font-weight: 500;
 	}
 }
@@ -59,7 +74,7 @@ sub { top: 0.75rem; }
 
 /* Article Header */
 
-.single-meta-item + .single-meta-item::before {
+.single-meta-item+.single-meta-item::before {
 	content: "\0020\2022\0020";
 	padding: 0;
 }
@@ -69,15 +84,19 @@ h1.single-title {
 	font-weight: 700;
 }
 
-.single-meta, .single-excerpt {
+.single-meta,
+.single-excerpt {
 	font-family: var(--font-caption);
 }
 
 .single-media {
 	margin-bottom: 1.5rem;
 }
+
 @media (max-width: 767px) {
-	.single-media {	margin-bottom: 1rem; }
+	.single-media {
+		margin-bottom: 1rem;
+	}
 }
 
 
@@ -97,23 +116,37 @@ figcaption {
 	font-family: var(--font-caption);
 }
 
-.gh-content > blockquote:not([class]), .gh-content > dl, .gh-content > ol, .gh-content > p, .gh-content > ul {
+.gh-content>blockquote:not([class]),
+.gh-content>dl,
+.gh-content>ol,
+.gh-content>p,
+.gh-content>ul {
 	font-size: 1.8rem;
 }
 
-.gh-content em, .gh-content i {
+.gh-content em,
+.gh-content i {
 	font-weight: 450;
 }
 
-.gh-content b, .gh-content strong {
+.gh-content b,
+.gh-content strong {
 	font-weight: 600;
 }
 
-.gh-content b em, .gh-content b i, .gh-content strong em, .gh-content strong i, .gh-content em b, .gh-content em strong, .gh-content i b, .gh-content i strong {
+.gh-content b em,
+.gh-content b i,
+.gh-content strong em,
+.gh-content strong i,
+.gh-content em b,
+.gh-content em strong,
+.gh-content i b,
+.gh-content i strong {
 	font-weight: 700;
 }
 
-.single-media figcaption a, .gh-content figcaption a {
+.single-media figcaption a,
+.gh-content figcaption a {
 	color: var(--ghost-accent-color);
 	text-decoration: underline;
 }
@@ -131,47 +164,57 @@ blockquote:not([class]) u {
 
 blockquote.kg-blockquote-alt {
 	color: var(--ghost-accent-color);
-	font-family: var(--font-serif-copy);
+	font-family: var(--font-serif);
 	font-size: 1.75em;
 	font-style: italic;
 	font-weight: 500;
-	margin: 0.25em 0;
+	margin-top: 1.4em;
 	padding: 0 0.666em;
 	text-align: center;
 }
 
+blockquote.kg-blockquote-alt bold,
+blockquote.kg-blockquote-alt strong {
+	font-weight: 650;
+}
+
 hr {
-  height: 4px;
-  width: calc(100% - 4px);
-  background: linear-gradient(to right, 
-    var(--ghost-accent-color) 0%, 
-    var(--ghost-accent-color) calc(50% - 24px), 
-    transparent calc(50% - 24px), 
-    transparent calc(50% + 24px), 
-    var(--ghost-accent-color) calc(50% + 24px), 
-    var(--ghost-accent-color) 100%);
-  overflow: visible;
+	height: 4px;
+	width: calc(100% - 4px);
+	background: linear-gradient(to right,
+			var(--ghost-accent-color) 0%,
+			var(--ghost-accent-color) calc(50% - 24px),
+			transparent calc(50% - 24px),
+			transparent calc(50% + 24px),
+			var(--ghost-accent-color) calc(50% + 24px),
+			var(--ghost-accent-color) 100%);
+	overflow: visible;
 }
 
 hr::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -43%);
-  width: 44px;
-  height: 44px;
-  background: var(--ghost-accent-color);
-  mask-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20viewBox%3D%22-5.0%20-10.0%20110.0%20135.0%22%3E%3Cpath%20d%3D%22m68.418%2020.391c-17.855-0.003906-29.789%205.9492-37.328%2012.836-9.6602%208.8203-12.25%2019.148-12.25%2019.148l-0.12891%200.53125c-0.80469%204.7695-0.11719%208.6094%200.88672%2011.391%207.8203-8.4062%2019.57-18.516%2034.66-24.219-26.75%2016.898-41.34%2042.754-41.34%2042.754-0.86328%201.4961-0.34375%203.4062%201.1562%204.2656%201.5039%200.85938%203.4219%200.33203%204.2734-1.1797%200%200%202.9219-5.1055%208.4648-12.156%204.6523%203.1836%2010.801%204.5273%2017.043%204.3086%207.543-0.26562%2015.395-2.8906%2020.988-8.4844%207.2773-7.2812%209.5977-15.289%2011.672-22.516%202.0742-7.2266%203.9102-13.668%2010.039-19.859%201.7852-1.793%200.81641-4.8555-1.6836-5.2852-5.957-1.0508-11.41-1.5234-16.406-1.5312z%22%2F%3E%3C%2Fsvg%3E');
-  mask-position: center;
-  mask-repeat: no-repeat;
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -43%);
+	width: 44px;
+	height: 44px;
+	background: var(--ghost-accent-color);
+	mask-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20viewBox%3D%22-5.0%20-10.0%20110.0%20135.0%22%3E%3Cpath%20d%3D%22m68.418%2020.391c-17.855-0.003906-29.789%205.9492-37.328%2012.836-9.6602%208.8203-12.25%2019.148-12.25%2019.148l-0.12891%200.53125c-0.80469%204.7695-0.11719%208.6094%200.88672%2011.391%207.8203-8.4062%2019.57-18.516%2034.66-24.219-26.75%2016.898-41.34%2042.754-41.34%2042.754-0.86328%201.4961-0.34375%203.4062%201.1562%204.2656%201.5039%200.85938%203.4219%200.33203%204.2734-1.1797%200%200%202.9219-5.1055%208.4648-12.156%204.6523%203.1836%2010.801%204.5273%2017.043%204.3086%207.543-0.26562%2015.395-2.8906%2020.988-8.4844%207.2773-7.2812%209.5977-15.289%2011.672-22.516%202.0742-7.2266%203.9102-13.668%2010.039-19.859%201.7852-1.793%200.81641-4.8555-1.6836-5.2852-5.957-1.0508-11.41-1.5234-16.406-1.5312z%22%2F%3E%3C%2Fsvg%3E');
+	mask-position: center;
+	mask-repeat: no-repeat;
 }
 
 
 /* Article Body - Special Styles */
 
-.indent  { padding-left: 1em; }
-.indent2 { padding-left: 2em; }
+.indent {
+	padding-left: 1em;
+}
+
+.indent2 {
+	padding-left: 2em;
+}
 
 .gh-content .intro {
 	font-family: var(--font-caption);
@@ -182,6 +225,7 @@ hr::after {
 	top: -2.5rem;
 	margin-bottom: -0.8rem;
 }
+
 @media (max-width: 767px) {
 	.gh-content .intro {
 		font-size: 1.7rem;
@@ -199,6 +243,7 @@ hr::after {
 	color: var(--color-darker-gray);
 }
 
-.tag-_format-poem .gh-content p:not(.intro) b, .tag-_format-poem .gh-content p:not(.intro) strong {
+.tag-_format-poem .gh-content p:not(.intro) b,
+.tag-_format-poem .gh-content p:not(.intro) strong {
 	font-weight: 700;
 }
