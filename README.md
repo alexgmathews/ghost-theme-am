@@ -8,7 +8,7 @@ Source code on [GitHub](https://github.com/alexgmathews/ghost-theme-am) (must be
 
 # Copyright & License
 
-© 2022–2025 Alexander Mathews
+© 2022–2026 Alexander Mathews
 
 All portions of this theme, excepting font software, released under the [MIT License](LICENSE.md)
 
