@@ -33,6 +33,26 @@
 }
 
 @font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 500;
+  font-synthesis: none;
+  src: url('/assets/fonts/jetbrainsmono-nl_r_500.v1.woff2') format('woff2');
+  unicode-range: U+20-7E;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: italic;
+  font-weight: 500;
+  font-synthesis: none;
+  src: url('/assets/fonts/jetbrainsmono-nl_i_500.v1.woff2') format('woff2');
+  unicode-range: U+20-7E;
+  font-display: block;
+}
+
+@font-face {
   font-family: Lora;
   font-style: normal;
   font-weight: 500;
@@ -59,26 +79,6 @@
   font-synthesis: none;
   src: url('/assets/fonts/lora_i_500.v3.woff2') format('woff2');
   unicode-range: U+20-7E, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  font-synthesis: none;
-  src: url('/assets/fonts/sourcecodepro_r_400.v3.woff2') format('woff2');
-  unicode-range: U+20-7E;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: italic;
-  font-weight: 400;
-  font-synthesis: none;
-  src: url('/assets/fonts/sourcecodepro_i_400.v3.woff2') format('woff2');
-  unicode-range: U+20-7E;
   font-display: block;
 }
 
