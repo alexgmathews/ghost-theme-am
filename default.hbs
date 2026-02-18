@@ -12,7 +12,7 @@
         {{#has tag="#format-poem"}}
             <link rel="preload" href="/assets/fonts/lora_r_500.v3.woff2" as="font" type="font/woff2" crossorigin>
         {{/has}}
-        {{#has tag="#format-code"}}
+        {{#has tag="#format-prism"}}
             <link rel="preload" href="/assets/fonts/jetbrainsmono-nl_r_500.v1.woff2" as="font" type="font/woff2" crossorigin>
         {{/has}}
     {{/post}}
@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
     {{#post}}
-        {{#has tag="#format-code"}}
+        {{#has tag="#format-prism"}}
             <link rel="stylesheet" href="/public/prism.min.css">
         {{/has}}
     {{/post}}
@@ -70,7 +70,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{asset "built/main.min.js"}}"></script>
 {{#post}}
-    {{#has tag="#format-code"}}
+    {{#has tag="#format-prism"}}
         <script src="/public/prism.min.js"></script>
     {{/has}}
 {{/post}}
