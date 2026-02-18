@@ -14,11 +14,11 @@
     --red-color: #dc3545;
     --rss-color: #f26522;
     --animation-base: ease-in-out;
-    --font-caption: 'Cabin 95x','Trebuchet MS',Trebuchet,sans-serif;
-	--font-mono: 'Source Code Pro',Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-	--font-sans: 'Source Sans','Trebuchet MS',Trebuchet,sans-serif;
-	--font-serif: 'Crimson Pro',Charter,'Bitstream Charter',Georgia,Baskerville,serif;
-	--font-serif-copy: Lora,Charter,'Bitstream Charter',Georgia,Baskerville,serif;
+    --font-caption: 'Cabin 95x', 'Trebuchet MS', Trebuchet, sans-serif;
+    --font-mono: 'JetBrains Mono NL', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Monaspace', 'Source Code Pro', 'Roboto Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, 'Cascadia Mono', 'Ubuntu Mono', 'Liberation Mono', Consolas, 'Courier New', monospace;
+    --font-sans: 'Source Sans', 'Trebuchet MS', Trebuchet, sans-serif;
+    --font-serif: 'Crimson Pro', Charter, 'Bitstream Charter', Georgia, Baskerville, serif;
+    --font-serif-copy: Lora, Charter, 'Bitstream Charter', Georgia, Baskerville, serif;
     --navbar-height: 80px;
     --content-font-size: 1.7rem;
     --header-spacing: 60px;

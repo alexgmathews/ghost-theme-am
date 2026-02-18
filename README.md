@@ -31,6 +31,10 @@ This theme includes the following third-party software:
 © 2013–2026 Ghost Foundation\
 [MIT License](https://github.com/TryGhost/Dawn/blob/main/LICENSE)
 
+**[JetBrains Mono NL](https://github.com/JetBrains/JetBrainsMono)**\
+© Copyright 2020 The JetBrains Mono Project Authors \
+[SIL Open Font License, Version 1.1](https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt)
+
 Leaf icon by Meko from [Noun Project](https://thenounproject.com/browse/icons/term/leaf/) (CC BY 3.0)
 
 **[Lora](https://github.com/cyrealtype/Lora-Cyrillic)**\
@@ -40,10 +44,6 @@ Leaf icon by Meko from [Noun Project](https://thenounproject.com/browse/icons/te
 **[Prism.js](https://github.com/PrismJS/prism)**\
 © 2012 Lea Verou\
 [MIT License](https://github.com/PrismJS/prism/blob/master/LICENSE)
-
-**[Source Code Pro](https://github.com/adobe-fonts/source-code-pro)**\
-© 2023 [Adobe](http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe in the United States and/or other countries\
-[SIL Open Font License, Version 1.1](https://github.com/adobe-fonts/source-code-pro/blob/release/LICENSE.md)
 
 **[Source Sans](https://github.com/adobe-fonts/source-sans)**\
 © 2010-2024 [Adobe](http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe in the United States and/or other countries\
