@@ -8,7 +8,7 @@ Source code on [GitHub](https://github.com/alexgmathews/ghost-theme-am) (must be
 
 # Copyright & License
 
-© 2022–2025 Alexander Mathews
+© 2022–2026 Alexander Mathews
 
 All portions of this theme, excepting font software, released under the [MIT License](LICENSE.md)
 
@@ -28,7 +28,7 @@ This theme includes the following third-party software:
 [SIL Open Font License, Version 1.1](https://github.com/Fonthausen/CrimsonPro/blob/master/OFL.txt)
 
 **[Dawn](https://github.com/TryGhost/Dawn)**\
-© 2013–2025 Ghost Foundation\
+© 2013–2026 Ghost Foundation\
 [MIT License](https://github.com/TryGhost/Dawn/blob/main/LICENSE)
 
 Leaf icon by Meko from [Noun Project](https://thenounproject.com/browse/icons/term/leaf/) (CC BY 3.0)
