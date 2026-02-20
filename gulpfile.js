@@ -39,7 +39,7 @@ function hbs(done) {
 
 function css(done) {
     pump([
-        src('assets/css/screen.css', {sourcemaps: true}),
+        src('assets/css/screen.css', {sourcemaps: false}),
         postcss([
             easyimport,
             autoprefixer(),
@@ -67,7 +67,7 @@ function getJsFiles(version) {
 
 function js(done) {
     pump([
-        order(getJsFiles('v1'), {sourcemaps: true}),
+        order(getJsFiles('v1'), {sourcemaps: false}),
         concat('main.min.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
