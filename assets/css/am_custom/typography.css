@@ -1,5 +1,9 @@
 /* Layout Resets */
 
+.gh-content :is(li + li, li :is(ul, ol)) {
+	margin-top: 0;
+}
+
 /* Correct Superscript and Subscript Formatting */
 sub,
 sup {
