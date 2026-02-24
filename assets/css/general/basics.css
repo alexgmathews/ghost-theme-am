@@ -1,42 +1,37 @@
 :root {
-    --brand-color: var(--ghost-accent-color, #ff572f);
-    --primary-text-color: #333;
-    --secondary-text-color: #999;
-    --white-color: #fff;
-    --lighter-gray-color: #f6f6f6;
-    --light-gray-color: #e6e6e6;
-    --mid-gray-color: #ccc;
-    --dark-gray-color: #444;
-    --darker-gray-color: #1a1a1a;
-    --black-color: #000;
-    --green-color: #28a745;
-    --orange-color: #ffc107;
-    --red-color: #dc3545;
-    --rss-color: #f26522;
-    --animation-base: ease-in-out;
-    --font-caption: 'Cabin 95x', 'Trebuchet MS', Trebuchet, sans-serif;
-    --font-mono: 'JetBrains Mono NL', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Monaspace', 'Source Code Pro', 'Roboto Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, 'Cascadia Mono', 'Ubuntu Mono', 'Liberation Mono', Consolas, 'Courier New', monospace;
-    --font-sans: 'Source Sans', 'Trebuchet MS', Trebuchet, sans-serif;
-    --font-serif: 'Crimson Pro', Charter, 'Bitstream Charter', Georgia, Baskerville, serif;
-    --font-serif-copy: Lora, Charter, 'Bitstream Charter', Georgia, Baskerville, serif;
-    --navbar-height: 80px;
-    --content-font-size: 1.7rem;
-    --header-spacing: 60px;
+  --brand-color: var(--ghost-accent-color, #ff572f);
+  --primary-text-color: #333;
+  --secondary-text-color: #999;
+  --white-color: #fff;
+  --lighter-gray-color: #f6f6f6;
+  --light-gray-color: #e6e6e6;
+  --mid-gray-color: #ccc;
+  --dark-gray-color: #444;
+  --darker-gray-color: #1a1a1a;
+  --black-color: #000;
+  --green-color: #28a745;
+  --orange-color: #ffc107;
+  --red-color: #dc3545;
+  --rss-color: #f26522;
+  --animation-base: ease-in-out;
+  --navbar-height: 80px;
+  --content-font-size: 1.7rem;
+  --header-spacing: 60px;
 }
 
 @media (max-width: 767px) {
-    :root {
-        --header-spacing: 30px;
-    }
+  :root {
+      --header-spacing: 30px;
+  }
 }
 
 body {
-    color: var(--primary-text-color);
-    background-color: var(--white-color);
+  color: var(--primary-text-color);
+  background-color: var(--white-color);
 }
 
 a {
-    color: var(--darker-gray-color);
+  color: var(--darker-gray-color);
 }
 
 h1,
@@ -45,6 +40,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 800;
-    color: var(--darker-gray-color);
+  font-weight: 800;
+  color: var(--darker-gray-color);
 }

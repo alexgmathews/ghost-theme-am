@@ -1,0 +1,63 @@
+{
+  "_defaults": {
+    "font-display": "block",
+    "font-synthesis": "none",
+    "unicode-range": "U+0020, U+0030-0039, U+0041-005A, U+0061-007A"
+  },
+  "Cabin 95x Web": {
+    "regular": {
+      "_source": "Cabin95x-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    },
+    "italic": null
+  },
+  "Crimson Pro Web": {
+    "regular": {
+      "_source": "CrimsonPro-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    },
+    "italic": {
+      "_source": "CrimsonPro-Italic-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    }
+  },
+  "JetBrains Mono Web": {
+    "regular": {
+      "_source": "JetBrainsMono[wght].ttf",
+      "font-weight": null,
+      "unicode-range": null
+    },
+    "italic": {
+      "_source": "JetBrainsMono-Italic[wght].ttf",
+      "font-weight": null,
+      "unicode-range": null
+    }
+  },
+  "Lora Web": {
+    "regular": {
+      "_source": "Lora-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    },
+    "italic": {
+      "_source": "Lora-Italic-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    }
+  },
+  "Source Sans 3 Web": {
+    "regular": {
+      "_source": "SourceSans3-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    },
+    "italic": {
+      "_source": "SourceSans3-Italic-VariableFont_wght.ttf",
+      "font-weight": null,
+      "unicode-range": null
+    }
+  }
+}

@@ -31,7 +31,7 @@ This theme includes the following third-party software:
 © 2013–2026 Ghost Foundation\
 [MIT License](https://github.com/TryGhost/Dawn/blob/main/LICENSE)
 
-**[JetBrains Mono NL](https://github.com/JetBrains/JetBrainsMono)**\
+**[JetBrains Mono](https://github.com/JetBrains/JetBrainsMono)**\
 © Copyright 2020 The JetBrains Mono Project Authors \
 [SIL Open Font License, Version 1.1](https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt)
 

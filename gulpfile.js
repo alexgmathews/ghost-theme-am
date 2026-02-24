@@ -1,54 +1,47 @@
-const {series, parallel, watch, src, dest} = require('gulp');
+const { series, src, dest } = require('gulp');
 const pump = require('pump');
 const fs = require('fs');
 const order = require('ordered-read-streams');
 
-// gulp plugins and utils
-const livereload = require('gulp-livereload');
-const postcss = require('gulp-postcss');
+// Core plugins
 const concat = require('gulp-concat');
+const csso = require('gulp-csso');
+const postcss = require('gulp-postcss');
 const uglify = require('gulp-uglify');
-const beeper = require('beeper');
 const zip = require('gulp-zip');
 
-// postcss plugins
+// Postcss plugins
 const easyimport = require('postcss-easy-import');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+const purgecss = require('@fullhuman/postcss-purgecss').default;
 
-function serve(done) {
-    livereload.listen();
-    done();
-}
 
 function handleError(done) {
     return function (err) {
-        if (err) {
-            beeper();
-        }
         return done(err);
     };
-};
-
-function hbs(done) {
-    pump([
-        src(['*.hbs', 'partials/**/*.hbs']),
-        livereload()
-    ], handleError(done));
 }
+
 
 function css(done) {
     pump([
-        src('assets/css/screen.css', {sourcemaps: false}),
+        src('assets/css/screen.css', { sourcemaps: false }),
         postcss([
             easyimport,
-            autoprefixer(),
-            cssnano()
+            purgecss({
+                content: ['../site-scrape/*.html'],
+                safelist: [],
+                blocklist: [],
+                rejected: false,
+                keyframes: true,
+                fontFace: false,
+                variables: true
+            })
         ]),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
+        csso(),
+        dest('assets/built/', { sourcemaps: false })
     ], handleError(done));
 }
+
 
 function getJsFiles(version) {
     const jsFiles = [
@@ -67,49 +60,38 @@ function getJsFiles(version) {
 
 function js(done) {
     pump([
-        order(getJsFiles('v1'), {sourcemaps: false}),
+        order(getJsFiles('v1'), { sourcemaps: false }),
         concat('main.min.js'),
         uglify(),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
+        dest('assets/built/', { sourcemaps: false })
     ], handleError(done));
 }
+
 
 function zipper(done) {
     const filename = require('./package.json').name + '.zip';
 
-    pump(
-        [
-            src(
-                [
-                    '**',
-                    '!.**',
-                    '!dist', '!dist/**',
-                    '!node_modules', '!node_modules/**',
-                    '!package-lock.json',
-                    '!yarn.lock',
-                    '!yarn-error.log',
-                    '!assets/css', '!assets/css/**',
-                    '!assets/js', '!assets/js/**',
-                    '!gulpfile.js'
-                ],
-                {
-                    encoding: false
-                }
-            ),
-            zip(filename),
-            dest('dist/')
-        ],
-        handleError(done)
-    );
+    pump([
+        src([
+            '**',
+            '!.**',
+            '!dist', '!dist/**',
+            '!node_modules', '!node_modules/**',
+            '!package-lock.json',
+            '!yarn.lock',
+            '!yarn-error.log',
+            '!assets/css', '!assets/css/**',
+            '!assets/fonts', '!assets/fonts/**',
+            '!assets/js', '!assets/js/**',
+            '!gulpfile.js'
+        ], { encoding: false }),
+        zip(filename),
+        dest('dist/')
+    ], handleError(done));
 }
 
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const cssWatcher = () => watch('assets/css/**/*.css', css);
-const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
-const build = series(css, js);
 
-exports.build = build;
-exports.zip = series(build, zipper);
-exports.default = series(build, serve, watcher);
+// Exported tasks
+exports.css = css;
+exports.js = js;
+exports.zip = zipper;

@@ -1,64 +1,85 @@
 name: Deploy theme
 
 on:
-  workflow_dispatch:
-  push:
-    branches: main
-    paths:
-      - '**'
-      - '!.**'
-      - '!assets/fonts/LICENSE.md'
-      - '!gulpfile.js'
-      - '!LICENSE.md'
-      - '!README.md'
+    workflow_dispatch:
+    push:
+        branches: main
+        paths:
+            - "**"
+            - "!.**"
+            - "!assets/fonts/LICENSE.md"
+            - "!gulpfile.js"
+            - "!LICENSE.md"
+            - "!README.md"
 
 jobs:
-  deploy_theme:
-    runs-on: ubuntu-latest
-  
+    deploy_theme:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout the main branch
-        uses: actions/checkout@v4
-        with:
-          ref: main
-      
+        steps:
+            - name: Checkout the Main Branch
+              uses: actions/checkout@v4
+              with:
+                  ref: main
 
-      - name: Minify handlebars templates
-        run: |
+            - name: Fetch; Unpack; Pre-Process HTML Scrape
+              run: |
+                  # Create the scrape directory one level above the working theme directory
+                  mkdir -p ${{ github.workspace }}/../site-scrape
 
-          # Don't minify alternate image sizes template (1/2) - CDN URL replacement is faster using new-line matching
-          mv partials/srcset.hbs partials/srcset.no-min
+                  # Download the site scrape
+                  curl -f -X POST ${{ vars.GHOST_SCRAPER_URL }} \
+                    -H "Authorization: Bearer ${{ secrets.GHOST_SCRAPER_TOKEN }}" \
+                    --output ${{ github.workspace }}/../site-scrape.tar.zst
 
-          # Remove handlebars comments
-          find . -type f -name "*.hbs" -exec perl -i -pe 's/\{\{!--.*?--\}\}//g' {} \;
+                  # Unpack it
+                  tar -I zstd --strip-components=1 -xf ${{ github.workspace }}/../site-scrape.tar.zst -C ${{ github.workspace }}/../site-scrape
+                  rm ${{ github.workspace }}/../site-scrape.tar.zst
 
-          # 1. Delete all empty lines - ^\s*$
-          # 2. Strip preceeding whitespace - ^\s+
-          # 3. Strip trailing whitespace - \s+$
-          # 4. Add a trailing space to all lines that do not end with > or }}
-          find . -type f -name "*.hbs" -exec sed -i -e '/^\s*$/d' -e 's/^\s\+//' -e 's/\s\+$//' -e '/>$/!{ /}}$/!s/$/ / }' {} \;
+                  # Strip <head> contents, inject single link to built CSS
+                  find ${{ github.workspace }}/../site-scrape -name "*.html" -exec perl -i -0777 -pe \
+                    's|<head>.*?</head>|<head><link href="file://${{ github.workspace }}/assets/built/screen.css" rel=stylesheet></head>|gs' \
+                    {} \;
 
-          # Remove all line breaks
-          find . -type f -name "*.hbs" -exec sed -i ':a;N;$!ba;s/\n//g' {} \;
+            - name: Install Dependencies
+              run: yarn
 
-          # Bugfix
-          sed -i 's/{{ghost_head[^}]*}}/\n&\n/' default.hbs
+            - name: Build CSS
+              run: yarn gulp css
 
-          # Don't minify alternate image size template (2/2)
-          mv partials/srcset.no-min partials/srcset.hbs
+            - name: Subset Fonts
+              run: echo "filler"
 
+            - name: Build Javascript
+              run: yarn gulp js
 
-      - name: Build and package theme
-        run: |
+            - name: Minify Handlebars Templates
+              run: |
 
-          yarn
-          yarn zip
+                  # Strip multi-line handlebar comments `{{!--...--}}`
+                  find . -type f -name "*.hbs" ! -name "srcset.hbs" -exec perl -0777 -i -pe 's/\{\{!--.*?--\}\}//gs' {} +
 
+                  # 1. Strip single line handlebar comments `{{! ... }}`
+                  #      Note: I don't know why, but single line comment stripping requires comments to be space-padded. If you strip without interior spaces, it breaks the theme.
+                  # 2. Delete all empty lines - ^\s*$
+                  # 3. Strip preceeding whitespace - ^\s+
+                  # 4. Strip trailing whitespace - \s+$
+                  # 5. Add a trailing space to all lines that do not end with > or }}
+                  find . -type f -name "*.hbs" ! -name "srcset.hbs" -exec sed -i -E 's/\{\{\!\s+[^}]*\s+\}\}//g; /^\s*$/d; s/^\s+//; s/\s+$//; />$/!{ /}}$/!s/$/ /; }' {} +
 
-      - name: Deploy theme
-        uses: TryGhost/action-deploy-theme@v1
-        with:
-          api-url: ${{ vars.GHOST_ADMIN_API_URL }}
-          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          file: "dist/ghost-theme-am.zip"
+                  # Remove all line breaks
+                  find . -type f -name "*.hbs" ! -name "srcset.hbs" -exec sed -i ':a;N;$!ba;s/\n//g' {} +
+
+                  # Set {{ghost_head}} and {{ghost_foot}} on dedicated lines to prevent interaction failures
+                  sed -i 's/{{ghost_head[^}]*}}/\n&\n/' default.hbs
+                  sed -i 's/{{ghost_foot[^}]*}}/\n&\n/' default.hbs
+
+            - name: Package Theme
+              run: yarn gulp zip
+
+            - name: Deploy theme
+              uses: TryGhost/action-deploy-theme@v1
+              with:
+                  api-url: ${{ vars.GHOST_ADMIN_API_URL }}
+                  api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+                  file: "dist/ghost-theme-am.zip"

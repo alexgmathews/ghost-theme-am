@@ -1,0 +1,86 @@
+Font Style Guide
+
+Manual Audit 2025-02-20
+
+--font-caption
+Cabin
+Labels & Alternate Serif (all-caps great for small font sizes)
+
+  r 400
+    .feed-title
+    figcaption (photo caption)
+
+  r 500
+    .gh-head-actions mobile (unused)
+    .gh-head-menu mobile (top navigation bar)
+
+  r 600
+    .feed-calendar
+    .gh-head-actions (unused)
+    .gh-head-menu (top navigation bar)
+
+  r 700
+    .single-meta (article metadata)
+    .single-excerpt (article excerpt)
+
+
+--font-serif (--gh-font-heading)
+Crimson Pro
+Headings & Stylized Text
+
+  r 500
+    h3
+  r 600
+    .gh-head-logo (blog title)
+  r 700
+    h1
+    h2
+
+  i 500
+    blockquote.kg-blockquote-alt (blockquote style #2)
+  i 650
+    blockquote.kg-blockquote-alt b/strong (blockquote style #2)
+
+
+--font-mono
+JetBrains Mono
+Code
+
+  r 500
+    code
+  r 700
+    code b/strong
+
+
+--font-serif-alt
+Lora
+Poetry and Blockquote Style #1
+
+  r 500
+    .tag-_format-poem .gh-content (poetry)
+  * r 600
+     .tag-_format-poem .gh-content :is(b, strong)
+
+
+  i 500
+    blockquote:not([class]) (blockquote style #1)
+  * i 600
+    blockquote:not([class]) :is(b, strong)
+
+
+--font-sans (--gh-font-body, --gh-font-heading)
+Source Sans
+Default Font
+
+  r 400
+    .feed-title (index article titles) {dualstack}
+    * body {dualstack}
+  r 550
+    .button (unused)
+    .gh-content :is(b, strong)
+
+  i 450
+    .gh-content :is(em, i)
+  i 600
+    .gh-content :is(b, strong) :is(em, i),
+    .gh-content :is(em, i) :is(b, strong),

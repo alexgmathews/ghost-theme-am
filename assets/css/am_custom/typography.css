@@ -1,253 +1,275 @@
-/* Layout Resets */
+/*** Base Styles ***/
+
+:root {
+  --font-caption: "Cabin 95x", "Cabin 95x Web", "Trebuchet MS", Trebuchet, sans-serif;
+  --font-mono: "JetBrains Mono", "JetBrains Mono NL", "JetBrains Mono Web", ui-monospace, monospace;
+  --font-sans: "Source Sans 3", "Source Sans 3 Web", "Trebuchet MS", Trebuchet, sans-serif;
+  --font-serif: "Crimson Pro", "Crimson Pro Web", Charter, Georgia, Baskerville, serif;
+  --font-serif-alt: Lora, "Lora Web", Charter, Georgia, Baskerville, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 500;
+}
 
 .gh-content :is(li + li, li :is(ul, ol)) {
-	margin-top: 0;
+  margin-top: 0;
+}
+
+.button {
+  font-weight: 600;
 }
 
 /* Correct Superscript and Subscript Formatting */
 sub,
 sup {
-	vertical-align: unset;
-	position: relative;
+  vertical-align: unset;
+  position: relative;
 }
 
 sup {
-	bottom: 0.75rem;
+  bottom: 0.75rem;
 }
 
 sub {
-	top: 0.75rem;
+  top: 0.75rem;
 }
-
 
 /* Don't Center Text on Small Screens */
 @media (max-width: 767px) {
-	.single-header {
-		text-align: left;
-	}
+  .single-header {
+      text-align: left;
+  }
 
-	figcaption {
-		text-align: right;
-	}
+  figcaption {
+      text-align: right;
+  }
 }
 
-
-/* Masthead */
+/*** Masthead ***/
 
 .gh-head-logo {
-	font-family: var(--font-serif);
-	font-weight: 600;
-	font-size: 2.35rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2.35rem;
 }
 
-.gh-head-menu,
-.gh-head-actions {
-	font-family: var(--font-caption);
-	font-weight: 600;
+.gh-head-actions,
+.gh-head-menu {
+  font-family: var(--font-caption);
+  font-weight: 600;
 }
 
 @media (max-width: 991px) {
-
-	.gh-head-menu,
-	.gh-head-actions {
-		font-weight: 500;
-	}
+  .gh-head-actions,
+  .gh-head-menu {
+      font-weight: 500;
+  }
 }
 
 .nav {
-	color: var(--darker-gray-color);
+  color: var(--darker-gray-color);
 }
 
 @media (min-width: 768px) {
-	.nav-home {
-		display: none;
-	}
+  .nav-home {
+      display: none;
+  }
 }
 
-
-/* Index */
+/*** Index ***/
 
 .feed-calendar {
-	font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .feed-title {
-	font-family: var(--font-caption);
+  font-family: var(--font-caption);
 }
 
+/*** Article Header ***/
 
-/* Article Header */
-
-.single-meta-item+.single-meta-item::before {
-	content: "\0020\2022\0020";
-	padding: 0;
-}
-
-h1.single-title {
-	font-family: var(--font-serif);
-	font-weight: 700;
+.single-meta-item + .single-meta-item::before {
+  content: "\0020\2022\0020";
+  padding: 0;
 }
 
 .single-meta,
 .single-excerpt {
-	font-family: var(--font-caption);
+  font-family: var(--font-caption);
+}
+
+.single-meta {
+  font-weight: 700;
 }
 
 .single-media {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (max-width: 767px) {
-	.single-media {
-		margin-bottom: 1rem;
-	}
+  .single-media {
+      margin-bottom: 1rem;
+  }
 }
 
-
-/* Article Body - Base Formatting */
-
-.gh-content h2 {
-	font-family: var(--font-serif);
-	font-weight: 700;
-}
-
-.gh-content h3 {
-	font-family: var(--font-serif);
-	font-weight: 500;
-}
+/*** Article Body - Base Formatting ***/
 
 figcaption {
-	font-family: var(--font-caption);
+  font-family: var(--font-caption);
 }
 
-.gh-content>blockquote:not([class]),
-.gh-content>dl,
-.gh-content>ol,
-.gh-content>p,
-.gh-content>ul {
-	font-size: 1.8rem;
+.gh-content > blockquote:not([class]),
+.gh-content > dl,
+.gh-content > ol,
+.gh-content > p,
+.gh-content > ul {
+  font-size: 1.8rem;
 }
 
-.gh-content em,
-.gh-content i {
-	font-weight: 450;
+.gh-content :is(b, strong) {
+  font-weight: 550;
 }
 
-.gh-content b,
-.gh-content strong {
-	font-weight: 600;
+.gh-content :is(em, i) {
+  font-weight: 450;
 }
 
-.gh-content b em,
-.gh-content b i,
-.gh-content strong em,
-.gh-content strong i,
-.gh-content em b,
-.gh-content em strong,
-.gh-content i b,
-.gh-content i strong {
-	font-weight: 700;
+.gh-content :is(b, strong) :is(em, i),
+.gh-content :is(em, i) :is(b, strong) {
+  font-weight: 600;
 }
 
 .single-media figcaption a,
 .gh-content figcaption a {
-	color: var(--ghost-accent-color);
-	text-decoration: underline;
+  color: var(--ghost-accent-color);
+  text-decoration: underline;
 }
 
 blockquote:not([class]) {
-	color: var(--dark-gray-color);
-	font-style: italic;
-	font-family: var(--font-serif-copy);
-	font-weight: 500;
+  color: var(--dark-gray-color);
+  font-style: italic;
+  font-family: var(--font-serif-alt);
+  font-weight: 500;
+}
+
+blockquote:not([class]) :is(b, strong) {
+  font-weight: 600;
 }
 
 blockquote:not([class]) u {
-	text-decoration: underline var(--mid-gray-color) 2px;
+  text-decoration: underline var(--mid-gray-color) 2px;
 }
 
 blockquote.kg-blockquote-alt {
-	color: var(--ghost-accent-color);
-	font-family: var(--font-serif);
-	font-size: 1.75em;
-	font-style: italic;
-	font-weight: 500;
-	margin-top: 1.4em;
-	padding: 0 0.666em;
-	text-align: center;
+  color: var(--ghost-accent-color);
+  font-family: var(--font-serif);
+  font-size: 1.75em;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 1.4em;
+  padding: 0 0.666em;
+  text-align: center;
 }
 
-blockquote.kg-blockquote-alt bold,
-blockquote.kg-blockquote-alt strong {
-	font-weight: 650;
+blockquote.kg-blockquote-alt :is(b, strong) {
+  font-weight: 650;
 }
 
 hr {
-	height: 4px;
-	width: calc(100% - 4px);
-	background: linear-gradient(to right,
-			var(--ghost-accent-color) 0%,
-			var(--ghost-accent-color) calc(50% - 24px),
-			transparent calc(50% - 24px),
-			transparent calc(50% + 24px),
-			var(--ghost-accent-color) calc(50% + 24px),
-			var(--ghost-accent-color) 100%);
-	overflow: visible;
+  height: 4px;
+  width: calc(100% - 4px);
+  background: linear-gradient(
+      to right,
+      var(--ghost-accent-color) 0%,
+      var(--ghost-accent-color) calc(50% - 24px),
+      transparent calc(50% - 24px),
+      transparent calc(50% + 24px),
+      var(--ghost-accent-color) calc(50% + 24px),
+      var(--ghost-accent-color) 100%
+  );
+  overflow: visible;
 }
 
 hr::after {
-	content: '';
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -43%);
-	width: 44px;
-	height: 44px;
-	background: var(--ghost-accent-color);
-	mask-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20viewBox%3D%22-5.0%20-10.0%20110.0%20135.0%22%3E%3Cpath%20d%3D%22m68.418%2020.391c-17.855-0.003906-29.789%205.9492-37.328%2012.836-9.6602%208.8203-12.25%2019.148-12.25%2019.148l-0.12891%200.53125c-0.80469%204.7695-0.11719%208.6094%200.88672%2011.391%207.8203-8.4062%2019.57-18.516%2034.66-24.219-26.75%2016.898-41.34%2042.754-41.34%2042.754-0.86328%201.4961-0.34375%203.4062%201.1562%204.2656%201.5039%200.85938%203.4219%200.33203%204.2734-1.1797%200%200%202.9219-5.1055%208.4648-12.156%204.6523%203.1836%2010.801%204.5273%2017.043%204.3086%207.543-0.26562%2015.395-2.8906%2020.988-8.4844%207.2773-7.2812%209.5977-15.289%2011.672-22.516%202.0742-7.2266%203.9102-13.668%2010.039-19.859%201.7852-1.793%200.81641-4.8555-1.6836-5.2852-5.957-1.0508-11.41-1.5234-16.406-1.5312z%22%2F%3E%3C%2Fsvg%3E');
-	mask-position: center;
-	mask-repeat: no-repeat;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -43%);
+  width: 44px;
+  height: 44px;
+  background: var(--ghost-accent-color);
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20viewBox%3D%22-5.0%20-10.0%20110.0%20135.0%22%3E%3Cpath%20d%3D%22m68.418%2020.391c-17.855-0.003906-29.789%205.9492-37.328%2012.836-9.6602%208.8203-12.25%2019.148-12.25%2019.148l-0.12891%200.53125c-0.80469%204.7695-0.11719%208.6094%200.88672%2011.391%207.8203-8.4062%2019.57-18.516%2034.66-24.219-26.75%2016.898-41.34%2042.754-41.34%2042.754-0.86328%201.4961-0.34375%203.4062%201.1562%204.2656%201.5039%200.85938%203.4219%200.33203%204.2734-1.1797%200%200%202.9219-5.1055%208.4648-12.156%204.6523%203.1836%2010.801%204.5273%2017.043%204.3086%207.543-0.26562%2015.395-2.8906%2020.988-8.4844%207.2773-7.2812%209.5977-15.289%2011.672-22.516%202.0742-7.2266%203.9102-13.668%2010.039-19.859%201.7852-1.793%200.81641-4.8555-1.6836-5.2852-5.957-1.0508-11.41-1.5234-16.406-1.5312z%22%2F%3E%3C%2Fsvg%3E");
+  mask-position: center;
+  mask-repeat: no-repeat;
 }
 
-
-/* Article Body - Special Styles */
+/*** Article Body - Special Styles ***/
 
 .indent {
-	padding-left: 1em;
+  padding-left: 1em;
 }
 
 .indent2 {
-	padding-left: 2em;
+  padding-left: 2em;
 }
 
-.gh-content .intro {
-	font-family: var(--font-caption);
-	font-size: 1.8rem;
-	color: var(--secondary-text-color);
-	text-align: center;
-	position: relative;
-	top: -2.5rem;
-	margin-bottom: -0.8rem;
+.tag-_format-poem .gh-content {
+  font-family: var(--font-serif-alt);
+  font-size: 1.8rem;
+  line-height: 1.666666;
+  font-weight: 500;
+  color: var(--color-darker-gray);
 }
 
-@media (max-width: 767px) {
-	.gh-content .intro {
-		font-size: 1.7rem;
-		text-align: left;
-		top: -1.2rem;
-		margin-bottom: 0;
-	}
+.tag-_format-poem .gh-content :is(b, strong) {
+  font-weight: 600;
 }
 
-.tag-_format-poem .gh-content p:not(.intro) {
-	font-family: var(--font-serif-copy);
-	font-size: 1.8rem;
-	line-height: 1.666666;
-	font-weight: 500;
-	color: var(--color-darker-gray);
+/*** Code Formatting ***/
+
+code,
+pre,
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-feature-settings: "zero";
 }
 
-.tag-_format-poem .gh-content p:not(.intro) b,
-.tag-_format-poem .gh-content p:not(.intro) strong {
-	font-weight: 700;
+code {
+  font-size: 1.6rem;
+}
+
+:is(b, strong) :is(code, pre),
+:is(code, pre) :is(b, strong) {
+  font-weight: 700;
+}
+
+/*** copied from prism.js css ***/
+:not(pre) > code {
+  background-color: #fdfdfd;
+  color: #c92c2c;
+  display: inline-block;
+  hyphens: none;
+  padding: 0 0.15em;
+  text-decoration: none;
+}
+
+/* Prism Override */
+pre[class*="language-"] > code {
+  line-height: 1.75;
+  background-size: 1em 5.6rem;
 }

@@ -1,5 +1,4 @@
 @import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
-@import "general/fonts.css";
 @import "general/basics.css";
 @import "general/button.css";
 @import "site/layout.css";
@@ -11,4 +10,3 @@
 @import "misc/utils.css";
 @import "am_custom/typography.css";
 @import "am_custom/color.css";
-@import "am_custom/code.css";

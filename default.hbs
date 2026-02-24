@@ -6,26 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
 
-    <link rel="preload" href="/assets/fonts/cabin95x_r_400-700.v1.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/crimsonpro_r_500-700.v1.woff2" as="font" type="font/woff2" crossorigin>
+
+    {{! FONTS }}
+
+    {{!-- REMOVELINE
+    <link rel="preload" href="TARGET='Cabin 95x Web'" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="TARGET='Crimson Pro Web'" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="TARGET='Source Sans 3 Web'" as="font" type="font/woff2" crossorigin>
+
     {{#post}}
+
         {{#has tag="#format-poem"}}
-            <link rel="preload" href="/assets/fonts/lora_r_500.v3.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="TARGET='Lora Web'" as="font" type="font/woff2" crossorigin>
         {{/has}}
-        {{#has tag="#format-prism"}}
-            <link rel="preload" href="/assets/fonts/jetbrainsmono-nl_r_500.v1.woff2" as="font" type="font/woff2" crossorigin>
+
+        {{#has tag="#plugin-prism"}}
+            <link rel="preload" href="TARGET='JetBrains Mono Web'" as="font" type="font/woff2" crossorigin>
         {{/has}}
+
     {{/post}}
-    <link rel="preload" href="/assets/fonts/sourcesans_r_400-600.v1.woff2" as="font" type="font/woff2" crossorigin>
+    REMOVELINE --}}
+
+
+    {{! STYLESHEETS }}
+
+    {{#post}}
+
+        {{! https://katex.org/docs/browser }}
+        {{#has tag="#plugin-katex"}}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.css" integrity="sha384-fgYS3VC1089n2J3rVcEbXDHlnDLQ9B2Y1hvpQ720q1NvxCduQqT4JoGc4u2QCnzE" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+        {{/has}}
+
+        {{! https://prismjs.com/download }}
+        {{#has tag="#plugin-prism"}}
+            <link rel="stylesheet" href="/public/prism.min.css" media="print" onload="this.media='all'">
+        {{/has}}
+
+    {{/post}}
 
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
-    {{#post}}
-        {{#has tag="#format-prism"}}
-            <link rel="stylesheet" href="/public/prism.min.css">
-        {{/has}}
-    {{/post}}
 
+
+    {{! GHOST HEAD }}
+
+    {{! https://www.spectralwebservices.com/blog/adding-new-features-to-ghost-head/ }}
     {{ghost_head exclude="social_data"}}
+
+
+    {{! STYLE INJECTION }}
 
     {{#tag}}
         {{#match slug "essays"}}<style>:root{--ghost-accent-color:#008F8F;}</style>{{/match}}
@@ -38,6 +66,7 @@
     {{/post}}
 
 </head>
+
 
 <body class='{{body_class}}{{{block "body_class"}}} is-head-left-logo'>
 <div class="site">
@@ -67,15 +96,26 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="{{asset "built/main.min.js"}}"></script>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js" integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="{{asset "built/main.min.js"}}"></script>
+
 {{#post}}
-    {{#has tag="#format-prism"}}
-        <script src="/public/prism.min.js"></script>
+
+    {{#has tag="#plugin-katex"}}
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/katex.min.js" integrity="sha384-YPHNAPyrxGS8BNnA7Q4ommqra8WQPEjooVSLzFgwgs8OXJBvadbyvx4QpfiFurGr" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/katex@0.16.33/dist/contrib/auto-render.min.js" integrity="sha384-JKXHIJf8PKPyDFptuKZoUyMRQJAmQKj4B4xyOca62ebJhciMYGiDdq/9twUUWyZH" crossorigin="anonymous" referrerpolicy="no-referrer" onload="renderMathInElement(document.body);"></script>
     {{/has}}
+
+    {{#has tag="#plugin-prism"}}
+        <script defer="defer" src="/public/prism.min.js"></script>
+    {{/has}}
+
 {{/post}}
 
+
 {{ghost_foot}}
+
 
 </body>
 </html>
